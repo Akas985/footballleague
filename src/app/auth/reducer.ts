@@ -40,6 +40,8 @@ export const initialState: AppState = {
   user: null,
   error: null,
   isLoggedIn: false,
+
+  
 };
 
 
@@ -50,9 +52,7 @@ export const authReducer = createReducer(
     on(login, (state) => ({ ...state, error: null })),
     on(loginSuccess, (state, { user }) => ({ ...state, user, isLoggedIn: true })),
     on(loginFailure, (state, { error }) => ({ ...state, error })),
-    // on(logout, (state) => {
-    //     // Clear user data
-    //     AuthService.clearUserData();
-    //     return initialState;
-    //   })
+    on(logout, () => initialState)
+
+      
   );

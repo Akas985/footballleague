@@ -2,6 +2,8 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { logout } from '../auth/action';
+import { AuthService } from '../auth/auth.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -11,9 +13,11 @@ import { logout } from '../auth/action';
   `,
 })
 export class LogoutComponent {
-  constructor(private store: Store) {}
+  constructor(private store: Store, private authService: AuthService, private router: Router) {}
 
   onLogout() {
+    this.authService.clearUserData();
     this.store.dispatch(logout());
+    this.router.navigate(['/']);
   }
 }

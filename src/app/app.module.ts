@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
@@ -18,6 +18,8 @@ import { AuthEffects } from './auth/effect';
 import { StoreModule } from '@ngrx/store';
 import { AuthService } from './auth/auth.service';
 import { TableComponentComponent } from './table-component/table-component/table-component.component';
+import { LogoutComponent } from './logout/logout.component';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 
 @NgModule({
@@ -25,7 +27,8 @@ import { TableComponentComponent } from './table-component/table-component/table
     AppComponent,
     LoginComponent,
     HeaderComponent,
-    TableComponentComponent
+    TableComponentComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +43,8 @@ import { TableComponentComponent } from './table-component/table-component/table
     FormsModule,
     // EffectsModule.forRoot([]),
     StoreModule.forRoot({ auth: authReducer }),
-    EffectsModule.forRoot([AuthEffects])
+    EffectsModule.forRoot([AuthEffects]),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() })
     
     
   ],
