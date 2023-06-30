@@ -89,6 +89,7 @@ export class AuthEffects {
             // Check if the username and password match
             if (user) {
               // Dispatch the login success action
+              
               this.router.navigate(['/tablecomponent']); // Navigate to the dashboard route
               return loginSuccess({ user });
             } else {

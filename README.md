@@ -1,4 +1,4 @@
-# FootballDemo
+# FootballLeague
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.4.
 
@@ -30,3 +30,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## node version 19.1.0
 
 ## ngrx store 15.4.0
+
+## Run Project
+ ng serve
+Username:admin
+password:admin123

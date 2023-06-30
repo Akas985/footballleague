@@ -9,7 +9,8 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-logout',
   template: `
-    <button (click)="onLogout()">Logout</button>
+    <button (click)="onLogout()" style="background: none;
+    color: #fff; cursor:pointer;">Logout</button>
   `,
 })
 export class LogoutComponent {
@@ -19,5 +20,6 @@ export class LogoutComponent {
     this.authService.clearUserData();
     this.store.dispatch(logout());
     this.router.navigate(['/']);
+   
   }
 }
