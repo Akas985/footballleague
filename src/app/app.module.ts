@@ -1,4 +1,4 @@
-import { NgModule, isDevMode } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA, NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -23,6 +23,8 @@ import { MatSortModule } from '@angular/material/sort';
 import { TableComponentComponent } from './table-component/table-component/table-component.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
+import { provideMockStore } from '@ngrx/store/testing';
+
 
 
 @NgModule({
@@ -47,13 +49,13 @@ import { MatTableModule } from '@angular/material/table';
     MatSortModule,
     MatPaginatorModule,
     MatTableModule,
-    // EffectsModule.forRoot([]),
     StoreModule.forRoot({ auth: authReducer }),
     EffectsModule.forRoot([AuthEffects]),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() })
     
     
   ],
+  schemas: [ NO_ERRORS_SCHEMA ],
   providers: [AuthService],
   bootstrap: [AppComponent]
 })

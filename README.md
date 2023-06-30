@@ -31,7 +31,19 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## ngrx store 15.4.0
 
+## @ngrx/effects 15.4.0
+
 ## Run Project
  ng serve
+
+ ## Project Credentials
 Username:admin
 password:admin123
+
+## Description
+ #Football League Angular Project is done on angularCLi version '15.1.4',
+ #Implementation of NGRX, for state management for login and logout , (@ngrx/store and @ngrx/effects.),
+ #MaterialUI is for design in this project.
+ #Demo data is presented in table.
+ #Implemention of  features like  pagination, sorting, for the table component using Angular Material components.
+ 

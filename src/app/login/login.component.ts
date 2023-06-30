@@ -5,8 +5,7 @@ import { login, loginFailure } from '../auth/action';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../auth/auth.service';
-import { of } from 'rxjs';
-import { User } from '../auth/user.model';
+
 
 
 @Component({
@@ -15,6 +14,9 @@ import { User } from '../auth/user.model';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
+  someMethodThatDispatchesAnAction() {
+    throw new Error('Method not implemented.');
+  }
   username!: string;
   password!: string;
   hide: boolean = false;
